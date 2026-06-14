@@ -27,3 +27,6 @@
 
 # Timber
 -dontwarn org.jetbrains.annotations.**
+-dontwarn io.ktor.**
+-dontwarn java.lang.management.**
+-dontwarn org.slf4j.**
