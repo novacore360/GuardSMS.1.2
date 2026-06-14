@@ -20,7 +20,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        // Supabase config from .env / BuildConfig (set in codemagic via -P or env vars)
         def supabaseUrl = project.hasProperty('SUPABASE_URL') ? project.property('SUPABASE_URL') : (System.getenv('SUPABASE_URL') ?: 'https://lrnvnbnnxuynaalggdtr.supabase.co')
         def supabaseAnonKey = project.hasProperty('SUPABASE_ANON_KEY') ? project.property('SUPABASE_ANON_KEY') : (System.getenv('SUPABASE_ANON_KEY') ?: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
 
@@ -28,11 +27,27 @@ android {
         buildConfigField "String", "SUPABASE_ANON_KEY", "\"${supabaseAnonKey}\""
     }
 
+    signingConfigs {
+        release {
+            def keystorePath = System.getenv("CM_KEYSTORE_PATH")
+            def keystorePassword = System.getenv("CM_KEYSTORE_PASSWORD")
+            def keyAlias = System.getenv("CM_KEY_ALIAS")
+            def keyPassword = System.getenv("CM_KEY_PASSWORD")
+
+            if (keystorePath) {
+                storeFile file(keystorePath)
+                storePassword keystorePassword
+                keyAlias keyAlias
+                keyPassword keyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release  // ← FIXED (was signingConfigs.debug)
         }
         debug {
             applicationIdSuffix ".debug"
