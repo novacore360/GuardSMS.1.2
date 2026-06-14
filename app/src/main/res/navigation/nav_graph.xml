@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.guardsms.presentation.dashboard.DashboardFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/nav_messages"
+        android:name="com.guardsms.presentation.messages.MessagesFragment"
+        android:label="Messages" />
+
+    <fragment
+        android:id="@+id/nav_reports"
+        android:name="com.guardsms.presentation.reports.ReportsFragment"
+        android:label="Reports" />
+
+    <fragment
+        android:id="@+id/nav_contacts"
+        android:name="com.guardsms.presentation.contacts.ContactsFragment"
+        android:label="Contacts" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.guardsms.presentation.settings.SettingsFragment"
+        android:label="Settings" />
+
+</navigation>

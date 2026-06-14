@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Status badge -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_status"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:clickable="false" android:textSize="12sp" />
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+        <TextView android:id="@+id/tv_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="@color/text_hint" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tv_sender_label"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="FROM" android:textSize="10sp" android:letterSpacing="0.1"
+        android:textColor="@color/text_hint" android:fontFamily="@font/inter_semibold"
+        android:paddingBottom="2dp" />
+    <TextView android:id="@+id/tv_sender"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="16sp" android:fontFamily="@font/inter_semibold"
+        android:textColor="@color/text_primary" android:paddingBottom="16dp" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="MESSAGE" android:textSize="10sp" android:letterSpacing="0.1"
+        android:textColor="@color/text_hint" android:fontFamily="@font/inter_semibold"
+        android:paddingBottom="6dp" />
+    <com.google.android.material.card.MaterialCardView
+        style="@style/GuardCard"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface_variant">
+        <TextView android:id="@+id/tv_body"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="14sp" android:textColor="@color/text_primary"
+            android:padding="14dp" android:lineSpacingMultiplier="1.4" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Extracted links -->
+    <LinearLayout android:id="@+id/ll_links_section"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:visibility="gone" android:paddingTop="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="EXTRACTED LINKS" android:textSize="10sp" android:letterSpacing="0.1"
+            android:textColor="@color/text_hint" android:fontFamily="@font/inter_semibold"
+            android:paddingBottom="6dp" />
+        <LinearLayout android:id="@+id/ll_links"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <!-- Threat analysis -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_threat"
+        style="@style/GuardCard"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/danger_bg"
+        app:strokeColor="@color/danger"
+        android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="THREAT ANALYSIS" android:textSize="10sp" android:letterSpacing="0.1"
+                android:textColor="@color/danger" android:fontFamily="@font/inter_semibold"
+                android:paddingBottom="4dp" />
+            <TextView android:id="@+id/tv_threat_detail"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13sp" android:textColor="@color/text_primary"
+                android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Actions -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingTop="20dp">
+        <Button android:id="@+id/btn_close"
+            style="@style/GuardButtonOutline"
+            android:layout_width="0dp" android:layout_height="44dp"
+            android:layout_weight="1" android:text="Close"
+            android:layout_marginEnd="8dp" android:insetTop="0dp" android:insetBottom="0dp" />
+        <Button android:id="@+id/btn_redflag"
+            style="@style/GuardButtonDanger"
+            android:layout_width="0dp" android:layout_height="44dp"
+            android:layout_weight="1" android:text="Red Flag"
+            android:insetTop="0dp" android:insetBottom="0dp" />
+    </LinearLayout>
+
+</LinearLayout>

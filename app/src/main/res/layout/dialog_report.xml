@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Submit Report"
+            android:textSize="18sp" android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/text_primary" android:paddingBottom="16dp" />
+
+        <!-- Report type selector -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="REPORT TYPE" android:textSize="10sp" android:letterSpacing="0.1"
+            android:textColor="@color/text_hint" android:fontFamily="@font/inter_semibold"
+            android:paddingBottom="8dp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            app:singleSelection="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_domain"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Domain" android:checked="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_url"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="URL" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_message"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Message" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Content input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_content"
+            style="@style/GuardTextInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Domain name (e.g. malicious-site.tk)"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="text" android:imeOptions="actionNext" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Threat type -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_threat_type"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Threat type"
+            android:layout_marginBottom="12dp">
+            <AutoCompleteTextView
+                android:id="@+id/et_threat_type"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_description"
+            style="@style/GuardTextInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Additional details (optional)"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="2" android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Error -->
+        <TextView android:id="@+id/tv_error"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="13sp" android:textColor="@color/danger"
+            android:paddingBottom="8dp" android:visibility="gone" />
+
+        <!-- Actions -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btn_cancel"
+                style="@style/GuardButtonOutline"
+                android:layout_width="0dp" android:layout_height="44dp"
+                android:layout_weight="1" android:text="Cancel"
+                android:layout_marginEnd="8dp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btn_submit"
+                style="@style/GuardButton"
+                android:layout_width="0dp" android:layout_height="44dp"
+                android:layout_weight="1" android:text="Submit"
+                android:insetTop="0dp" android:insetBottom="0dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
