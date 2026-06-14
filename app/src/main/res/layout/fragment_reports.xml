@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reports"
+            android:textSize="22sp" android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/text_primary" />
+        <Button
+            android:id="@+id/btn_add_report"
+            style="@style/GuardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="+ Report"
+            android:textSize="13sp"
+            android:paddingHorizontal="14dp"
+            android:insetTop="0dp" android:insetBottom="0dp" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        style="@style/GuardTabLayout"
+        android:paddingHorizontal="8dp">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Community Flags" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="My Reports" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_reports"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="8dp"
+            android:clipToPadding="false" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

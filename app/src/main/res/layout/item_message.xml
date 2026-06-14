@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/GuardCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top row: sender + status chip -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/text_primary"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_not_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="Not in your contacts"
+                    android:textSize="10sp"
+                    android:textColor="@color/warning"
+                    app:chipBackgroundColor="@color/warning_bg"
+                    app:chipMinHeight="22dp"
+                    app:chipStartPadding="6dp"
+                    app:chipEndPadding="6dp"
+                    android:visibility="gone"
+                    android:clickable="false" />
+            </LinearLayout>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:text="Safe"
+                android:textSize="11sp"
+                android:clickable="false"
+                app:chipMinHeight="26dp"
+                app:chipStartPadding="8dp"
+                app:chipEndPadding="8dp" />
+
+        </LinearLayout>
+
+        <!-- Message preview -->
+        <TextView
+            android:id="@+id/tv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <!-- Threat reason -->
+        <TextView
+            android:id="@+id/tv_threat_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/danger"
+            android:fontFamily="@font/inter_medium"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Links row -->
+        <HorizontalScrollView
+            android:id="@+id/scroll_links"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingBottom="8dp"
+            android:visibility="gone">
+            <LinearLayout
+                android:id="@+id/ll_links"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical" />
+        </HorizontalScrollView>
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/divider" android:layout_marginBottom="10dp" />
+
+        <!-- Bottom row: time + actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:textColor="@color/text_hint" />
+
+            <Button
+                android:id="@+id/btn_preview"
+                style="@style/GuardButtonOutline"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Preview"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_redflag"
+                style="@style/GuardButtonDanger"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Red Flag"
+                android:textSize="12sp"
+                android:paddingHorizontal="12dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

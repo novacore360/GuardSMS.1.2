@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuardSMS</string>
+    <string name="app_tagline">Intelligent SMS Threat Detection</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Create Account</string>
+    <string name="email">Email address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="no_account">Don\'t have an account? Sign up</string>
+    <string name="have_account">Already have an account? Sign in</string>
+
+    <!-- Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_reports">Reports</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">GuardSMS</string>
+    <string name="total_analyzed">Total Analyzed</string>
+    <string name="flagged">Flagged</string>
+    <string name="safe_messages">Safe</string>
+    <string name="blocked_messages">Blocked</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="top_flagged_domains">Top Flagged Domains</string>
+
+    <!-- Messages -->
+    <string name="messages_title">Messages</string>
+    <string name="tab_all">All</string>
+    <string name="tab_flagged">Flagged</string>
+    <string name="tab_safe">Safe</string>
+    <string name="not_in_contacts">Not in your contacts</string>
+    <string name="redflag_btn">Red Flag</string>
+    <string name="view_preview">View Message</string>
+    <string name="status_safe">Safe</string>
+    <string name="status_flagged">Flagged</string>
+    <string name="status_blocked">Blocked</string>
+    <string name="status_analyzing">Analyzing…</string>
+
+    <!-- Reports -->
+    <string name="reports_title">Reports</string>
+    <string name="report_domain">Report Domain</string>
+    <string name="report_url">Report URL</string>
+    <string name="report_message">Report Message</string>
+    <string name="community_list">Community Flags</string>
+    <string name="my_reports">My Reports</string>
+    <string name="threat_type_phishing">Phishing</string>
+    <string name="threat_type_fraud">Fraud / Scam</string>
+    <string name="threat_type_malware">Malware</string>
+    <string name="threat_type_spam">Spam</string>
+    <string name="threat_type_other">Other</string>
+
+    <!-- Contacts -->
+    <string name="contacts_title">Contacts</string>
+    <string name="sync_contacts">Sync Contacts</string>
+    <string name="contacts_synced">contacts synced</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="version">Version</string>
+
+    <!-- Privacy Policy -->
+    <string name="privacy_title">Privacy Policy</string>
+    <string name="privacy_content">GuardSMS Privacy Policy\n\nLast updated: June 2025\n\n1. DATA WE COLLECT\n\nMessage Content: Incoming SMS messages are stored temporarily on our servers (Supabase) for up to 24 hours to perform threat analysis. After 24 hours, message content is automatically and permanently deleted.\n\nContacts: Your phone contacts (name and phone number) are synced to our servers in plaintext to enable the "not in your contacts" detection feature. Contact data is stored permanently unless you delete your account.\n\nURLs, Domains, and Links: Extracted from messages and stored as SHA-256 cryptographic hashes only. The original URL or domain cannot be reconstructed from the hash.\n\n2. HOW WE USE YOUR DATA\n\nAll data is used solely to detect phishing, fraud, malware, and other SMS-based threats. Flagged domains and hashed URLs are shared across the community to improve collective protection. We do not sell or share personal data with third parties.\n\n3. DATA STORAGE\n\nAll data is stored in Supabase (cloud database). Message content is deleted after 24 hours. Contact data persists until account deletion. Hashed URLs and domains persist to power the community threat database.\n\n4. YOUR RIGHTS\n\nYou may request deletion of your account and all associated data at any time by contacting us. Deleting your account removes all messages, contacts, and personal reports.\n\n5. PERMISSIONS\n\nSMS Permission: Required to receive and analyze incoming messages.\nContacts Permission: Required to identify whether a sender is in your address book.\nInternet Permission: Required to sync data with our servers.\n\n6. CONTACT\n\nFor privacy concerns or data deletion requests, contact: privacy@guardsms.app</string>
+</resources>
